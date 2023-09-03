@@ -20,17 +20,9 @@ exports.getAllJobs = async (req, res) => {
     const jobs = await Job.findAll();
 
     res.render("jobs", { jobs });
-
-    // res.status(200).json({
-    //   success: true,
-    //   count: jobs.length,
-    //   data: jobs,
-    // });
   } catch (error) {
     console.log(`\nError: ${error.message}`);
-    res.status(500).json({
-      success: false,
-    });
+    res.render("error", { error: err.message });
   }
 };
 
@@ -48,9 +40,7 @@ exports.getSingleJob = async (req, res) => {
     });
   } catch (error) {
     console.log(`\nError: ${error.message}`);
-    res.status(500).json({
-      success: false,
-    });
+    res.render("error", { error: err.message });
   }
 };
 
@@ -69,16 +59,9 @@ exports.searchJob = async (req, res) => {
     });
 
     res.render("jobs", { jobs });
-
-    // res.status(200).json({
-    //   success: true,
-    //   data: job,
-    // });
   } catch (error) {
     console.log(`\nError: ${error.message}`);
-    res.status(500).json({
-      success: false,
-    });
+    res.render("error", { error: err.message });
   }
 };
 
@@ -117,16 +100,10 @@ exports.createJob = async (req, res) => {
 
       const jobs = await Job.findAll();
 
-      res.render("jobs", { jobs });
-      // res.status(201).json({
-      //   success: true,
-      //   message: "Job created in Database",
-      // });
+      res.redirect("/jobs");
     }
   } catch (error) {
     console.log(`\nError: ${error.message}`);
-    res.status(500).json({
-      success: false,
-    });
+    res.render("error", { error: err.message });
   }
 };
