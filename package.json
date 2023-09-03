@@ -12,7 +12,7 @@
     "postgres",
     "sequelize"
   ],
-  "author": "Imran4862",
+  "author": "Imran176",
   "license": "ISC",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
