@@ -1,0 +1,30 @@
+{
+  "name": "postgres_project",
+  "version": "1.0.0",
+  "description": "A job searching app built using node postgres and sequelize",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "node",
+    "postgres",
+    "sequelize"
+  ],
+  "author": "Imran4862",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
